@@ -333,7 +333,7 @@ Heading
 ========================================
 */
 .hero {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   min-height: 100vh;
   background: var(--clr-grey-2);
   display: flex;
