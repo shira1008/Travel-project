@@ -364,16 +364,16 @@ Heading
 }
 .hero-btn {
   padding: 0.9rem 1.6rem;
-  background: var(--clr-sec-2);
   font-size: 1rem;
   font-weight: bold;
-  color: var(--clr-grey-2);
+  color: var(--clr-sec-1);
+  background: transparent;
+  border-color: var(--clr-sec-2);
 }
 
 .hero-btn:hover {
-  background: transparent;
-  color: var(--clr-sec-1);
-  border-color: var(--clr-sec-2);
+  color: var(--clr-grey-2);
+  background: var(--clr-sec-2);
 }
 
 /* for bigger screen */
@@ -394,6 +394,13 @@ Heading
   }
   .hero-btn {
     background: var(--clr-primary-7);
+    color: var(--clr-grey-2);
+  }
+
+  .hero-btn:hover {
+    background: transparent;
+    color: var(--clr-sec-1);
+    border-color: var(--clr-sec-2);
   }
 
   .navbar {
