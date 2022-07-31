@@ -1,8 +1,7 @@
 // ********** set date ************
 // select span
-const date = (document.getElementById(
-  "date"
-).innerHTML = new Date().getFullYear());
+const date = (document.getElementById("date").innerHTML =
+  new Date().getFullYear());
 
 // ********** nav toggle ************
 // select button and links
@@ -16,8 +15,8 @@ navBtn.addEventListener("click", () => {
 // ********** smooth scroll ************
 // select links
 const scrollLinks = document.querySelectorAll(".scroll-link");
-scrollLinks.forEach(link => {
-  link.addEventListener("click", e => {
+scrollLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
     // prevent default
     e.preventDefault();
     links.classList.remove("show-links");
@@ -31,7 +30,30 @@ scrollLinks.forEach(link => {
       left: 0,
       // top: element.offsetTop,
       top: position,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   });
+});
+
+// lightbox;
+const lightbox = document.createElement("div");
+lightbox.id = "lightbox";
+document.body.appendChild(lightbox);
+
+const images = document.querySelectorAll(".gallery-img");
+images.forEach((image) => {
+  image.addEventListener("click", (e) => {
+    lightbox.classList.add("active");
+    const img = document.createElement("img");
+    img.src = image.src;
+    while (lightbox.firstChild) {
+      lightbox.removeChild(lightbox.firstChild);
+    }
+    lightbox.appendChild(img);
+  });
+});
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target !== e.currentTarget) return;
+  lightbox.classList.remove("active");
 });
